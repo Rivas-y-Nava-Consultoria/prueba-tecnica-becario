@@ -1,53 +1,179 @@
-Prueba técnica — Becario de Desarrollo de Software
-Objetivo
-Esta actividad busca conocer tu forma de resolver problemas, organizar código y aplicar fundamentos de programación. No esperamos una solución perfecta ni conocimientos de frameworks.
-Reto: sistema de gestión de tareas
-Desarrolla un programa sencillo para administrar las tareas de un equipo de trabajo.
 
-Cada tarea debe tener al menos los siguientes campos:
+# Prueba Técnica – Becario de Desarrollo de Software
+
+## 1. Introducción
+
+¡Bienvenido a nuestra prueba técnica!
+
+El objetivo de esta actividad es conocer tus conocimientos fundamentales de programación, tu razonamiento lógico y tu capacidad para resolver problemas.
+
+No buscamos una solución perfecta ni conocimientos avanzados. Nos interesa comprender cómo estructuras tu código y cómo abordas un problema.
+
+## 2. Objetivo
+
+Desarrollar un programa sencillo que permita administrar las tareas de un equipo de trabajo.
+
+El programa deberá permitir registrar, consultar, buscar, completar y eliminar tareas.
+
+## 3. Descripción del problema
+
+Un equipo de desarrollo necesita un programa para llevar el control de sus actividades pendientes.
+
+Cada tarea deberá contener la siguiente información:
+
+```json
 {
   "id": 1,
   "titulo": "Corregir error de inicio de sesión",
   "prioridad": "alta",
   "completada": false
 }
-Puedes utilizar una estructura equivalente en el lenguaje que elijas.
-Funcionalidades obligatorias
-1. Registrar una tarea: ingresar título y prioridad; asignar un ID único.
-2. Listar tareas: mostrar las tareas registradas con sus datos.
-3. Buscar por ID: mostrar la tarea correspondiente.
-4. Completar una tarea: actualizar su estado a completada.
-5. Eliminar una tarea: quitarla de la lista.
-Reglas y validaciones
-- El título no puede estar vacío ni contener únicamente espacios.
-- Los IDs de las tareas no pueden repetirse.
+```
+
+### Descripción de los campos
+
+| Campo | Descripción |
+|---|---|
+| id | Identificador único de la tarea |
+| titulo | Nombre o descripción breve de la tarea |
+| prioridad | Nivel de prioridad: alta, media o baja |
+| completada | Indica si la tarea está terminada |
+
+## 4. Requerimientos funcionales
+
+El programa deberá implementar las siguientes funcionalidades:
+
+### 4.1. Registrar una tarea
+
+Permitir que el usuario agregue una nueva tarea con la información requerida.
+
+**Consideraciones:**
+- Cada tarea debe tener un ID único.
+- El título no puede estar vacío.
 - La prioridad debe ser alta, media o baja.
-- Si se busca, completa o elimina una tarea inexistente, el programa debe informarlo sin fallar.
-- Las operaciones deben mantener consistentes los datos de las tareas.
-Condiciones técnicas
-- Elige el lenguaje de programación con el que te sientas más cómodo.
-- Puedes resolverlo desde consola; no es necesario crear una interfaz web o gráfica.
-- Puedes guardar los datos en memoria; no necesitas base de datos ni persistencia entre ejecuciones.
-- No se requieren frameworks ni librerías externas.
-- Organiza el código de manera que otra persona pueda comprenderlo.
-Entrega
-Envía un enlace a tu repositorio de GitHub o un archivo ZIP con tu código. Incluye un archivo README.md propio con:
-1. Lenguaje elegido y versión utilizada (si la conoces).
-2. Pasos para ejecutar tu programa.
-3. Breve descripción de cómo organizaste tu solución.
-4. Funcionalidades que lograste completar y cualquier limitación conocida.
-5. Herramientas o recursos de consulta utilizados, incluyendo IA si corresponde.
-Tiempo de referencia: 60 a 90 minutos. Si no alcanzas a terminar, entrega lo que hayas logrado y explica qué faltó.
+- Una tarea nueva debe registrarse como pendiente.
 
-Fecha límite: se comunicará por correo o por el medio de contacto del proceso.
-Criterios generales de evaluación
-- Funcionamiento de las operaciones solicitadas y manejo de errores.
-- Claridad y organización del código.
-- Uso adecuado de fundamentos de programación.
-- Capacidad para explicar tus decisiones y reconocer mejoras posibles.
-Uso de recursos
-Puedes consultar documentación, tutoriales y herramientas de IA. Te pedimos transparencia sobre los recursos que utilizaste y que puedas explicar el código que entregues.
+### 4.2. Consultar todas las tareas
 
-Durante una breve entrevista posterior, conversaremos sobre tu solución y es posible que te pidamos explicar o adaptar una parte de ella.
+Mostrar todas las tareas registradas con su información correspondiente.
 
-¡Éxito!
+### 4.3. Buscar una tarea
+
+Permitir buscar una tarea utilizando su ID.
+
+Si la tarea no existe, el programa deberá informar al usuario.
+
+### 4.4. Completar una tarea
+
+Permitir marcar una tarea pendiente como completada.
+
+Si la tarea ya está completada, el programa deberá informar al usuario.
+
+### 4.5. Eliminar una tarea
+
+Permitir eliminar una tarea utilizando su ID.
+
+Si la tarea no existe, el programa deberá informar al usuario.
+
+## 5. Requerimientos técnicos
+
+- Puedes utilizar el lenguaje de programación de tu preferencia.
+- No es necesario utilizar frameworks.
+- No es obligatorio utilizar una base de datos.
+- Los datos pueden almacenarse en memoria.
+- No es necesario desarrollar una interfaz gráfica.
+- El programa puede ejecutarse desde la consola.
+- Puedes utilizar las bibliotecas estándar del lenguaje seleccionado.
+
+La organización y estructura del código quedan a tu criterio.
+
+## 6. Ejemplo de funcionamiento
+
+El siguiente ejemplo es únicamente una referencia de cómo podría interactuar un usuario con el programa.
+
+```text
+===== GESTOR DE TAREAS =====
+
+1. Agregar tarea
+2. Mostrar tareas
+3. Buscar tarea
+4. Completar tarea
+5. Eliminar tarea
+6. Salir
+
+Selecciona una opción: 1
+
+ID: 1
+Título: Corregir login
+Prioridad: alta
+
+Tarea registrada correctamente.
+```
+
+No es obligatorio utilizar exactamente este menú. Puedes implementar otra forma de interacción que permita ejecutar las funcionalidades solicitadas.
+
+## 7. Criterios de evaluación
+
+Se evaluarán los siguientes aspectos:
+
+### Funcionamiento
+- Cumplimiento de los requerimientos.
+- Validación de datos.
+- Manejo de casos donde una tarea no existe.
+- Funcionamiento correcto de las operaciones.
+
+### Calidad del código
+- Claridad y legibilidad.
+- Uso adecuado de variables y funciones.
+- Organización del programa.
+- Evitar código repetitivo cuando sea posible.
+
+### Razonamiento
+- Capacidad para explicar la solución.
+- Comprensión del código desarrollado.
+- Justificación de las decisiones tomadas.
+
+No es necesario utilizar técnicas avanzadas de programación.
+
+## 8. Entregables
+
+Deberás entregar:
+
+1. El código fuente de tu solución.
+2. Un archivo README.md que explique:
+   - Qué lenguaje utilizaste.
+   - Cómo ejecutar el programa.
+   - Qué funcionalidades implementaste.
+   - Si existe alguna funcionalidad pendiente.
+   - Qué recursos o herramientas de apoyo utilizaste.
+
+Puedes entregar tu solución mediante:
+
+- Un repositorio de GitHub.
+- Un archivo ZIP con el proyecto.
+
+## 9. Tiempo estimado
+
+El tiempo estimado para completar la prueba es de **60 a 90 minutos**.
+
+La fecha límite de entrega será comunicada por el equipo de reclutamiento.
+
+## 10. Uso de herramientas de apoyo
+
+Puedes consultar documentación oficial, tutoriales y otros recursos de aprendizaje.
+
+También se permite utilizar herramientas de inteligencia artificial como apoyo.
+
+En caso de utilizarlas, indica brevemente para qué las empleaste.
+
+Durante la entrevista técnica podríamos solicitarte que expliques algunas partes de tu código o realices una modificación sencilla.
+
+## 11. Recomendaciones finales
+
+- Lee todos los requerimientos antes de comenzar.
+- Prioriza que el programa funcione correctamente.
+- Organiza tu código de forma clara.
+- Prueba las funcionalidades implementadas.
+- Si no logras completar alguna funcionalidad, indícalo en tu entrega.
+
+**¡Mucho éxito en tu prueba técnica!**
